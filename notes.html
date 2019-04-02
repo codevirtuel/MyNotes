@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <!--Import Google Icon Font-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!--Import materialize.css-->
+    <link type="text/css" rel="stylesheet" href="css/materialize.min.css" media="screen,projection"/>
+    <link type="text/css" rel="stylesheet" href="css/collapsible.css" media="screen,projection"/>
+    <link type="text/css" rel="stylesheet" href="css/notes.css" media="screen,projection"/>
+    <!--Let browser know website is optimized for mobile-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+</head>
+<body onload="load('data'); updateSlider(); showError()">
+<!--Navigation bar-->
+<nav>
+    <div class="nav-wrapper">
+        <div class="container">
+            <!-- Titles -->
+            <a href="#" class="brand-logo">MyNotes</a>
+            <a href="#" class="sidenav-trigger" data-target="mobile-links">
+                <i class="material-icons">menu</i>
+            </a>
+
+            <!-- Desktop navbar -->
+            <ul class="right hide-on-med-and-down" id="desktop-links">
+                <li class="active"><a href="#"><i class="material-icons left">home</i>Acceuil</a></li>
+                <li><a href="php/updateNotes.php?page=notes"><i class="material-icons left">update</i>Actualiser les notes</a></li>
+                <li class="divider"></li>
+                <li><a href="options.html"><i class="material-icons left">more_vert</i>Options</a></li>
+            </ul>
+
+            <!-- Mobile navbar -->
+            <ul class="sidenav" id="mobile-links">
+                <li>
+                    <div class="user-view">
+                        <div class="background">
+                            <img id="slider_img" src="images/dep_INFO.jpg">
+                        </div>
+                        <img class="circle" src="images/blank.png">
+                        <span id="slider_name" class="white-text slider-text">John Doe</span><br>
+                        <span id="slider_dep" class="white-text slider-text">Département INFO</span>
+                    </div>
+                </li>
+                <li class="active"><a href="#"><i class="material-icons">home</i>Acceuil</a></li>
+                <li><a href="php/updateNotes.php"><i class="material-icons">update</i>Actualiser les notes</a></li>
+                <li class="divider"></li>
+                <li><a href="options.html"><i class="material-icons">more_vert</i>Options</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<br/>
+<!-- page notes -->
+<div class="container" id="data">
+
+</div>
+
+
+
+<script src="./lib/jquery-3.3.1.min.js"></script>
+<script type="text/javascript" src="js/materialize.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/json2html/1.2.0/json2html.min.js"></script>
+<script type="text/javascript" src="js/HtmlBuilder.js"></script>
+<script type="text/javascript" src="js/updateSlider.js"></script>
+<script src="js/errors.js"></script>
+
+<script>
+    //Navbar
+    //var elem= document.querySelector('.sidenav');
+    //var instance = new M.Sidenav(elem);
+    $(function () {
+        $('.sidenav').sidenav();
+    });
+
+</script>
+</body>
+</html>

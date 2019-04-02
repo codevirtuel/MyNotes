@@ -1,0 +1,19 @@
+.collapsible-body
+{
+    padding-left: 2%!important;
+    padding-right: 0!important;
+    padding-top: 2%!important;
+    border: none;!important;
+    border-left: 2px dashed gray;
+}
+
+.collapsible-header, .collapsible, ul.collapsible>li{
+    box-shadow: none!important;
+    border: none;!important;
+    padding-right: 0!important;
+    display: block;
+}
+
+.collapsible-header:hover{
+    background-color: #ffcdd2;
+}

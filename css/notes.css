@@ -1,0 +1,29 @@
+.note_block{
+    padding-left: 2%;
+}
+
+.note-red{
+    color: #ef5350!important;
+    font-weight: bold;
+    padding: 1% 2% 1% 2%;
+    background-color: white;
+}
+
+.note-green{
+    color: #66bb6a!important;
+    font-weight: bold;
+    padding: 1% 2% 1% 2%;
+    background-color: white;
+}
+
+.note-orange{
+    color: #ff6c00 !important;
+    font-weight: bold;
+    padding: 1% 2% 1% 2%;
+    background-color: white;
+}
+
+.slider-text{
+    text-shadow: 1px 1px 4px black;
+    font-weight: bold;
+}

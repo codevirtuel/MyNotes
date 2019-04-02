@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <!--Import Google Icon Font-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!--Import materialize.css-->
+    <link type="text/css" rel="stylesheet" href="css/materialize.min.css" media="screen,projection"/>
+    <link type="text/css" rel="stylesheet" href="css/login.css" media="screen,projection"/>
+    <link type="text/css" rel="stylesheet" href="node_modules/@mdi/font/css/materialdesignicons.min.css"
+          media="screen,projection"/>
+
+    <!--Let browser know website is optimized for mobile-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+</head>
+<body onload="updateSlider(); showError()">
+<nav>
+    <div class="nav-wrapper">
+        <div class="container">
+            <!-- Titles -->
+            <a href="#" class="brand-logo">MyNotes</a>
+            <a href="#" class="sidenav-trigger" data-target="mobile-links">
+                <i class="material-icons">menu</i>
+            </a>
+
+            <!-- Desktop navbar -->
+            <ul class="right hide-on-med-and-down" id="desktop-links">
+                <li><a href="notes.html"><i class="material-icons left">home</i>Acceuil</a></li>
+                <li><a href="php/updateNotes.php?page=options"><i class="material-icons left">update</i>Actualiser les
+                    notes</a></li>
+                <li class="divider"></li>
+                <li class="active"><a href="options.html"><i class="material-icons left">more_vert</i>Options</a></li>
+            </ul>
+
+            <!-- Mobile navbar -->
+            <ul class="sidenav" id="mobile-links">
+                <li>
+                    <div class="user-view">
+                        <div class="background">
+                            <img id="slider_img" src="images/dep_INFO.jpg">
+                        </div>
+                        <img class="circle" src="images/blank.png">
+                        <span id="slider_name" class="white-text slider-text">John Doe</span><br>
+                        <span id="slider_dep" class="white-text slider-text">Département INFO</span>
+                    </div>
+                </li>
+                <li><a href="notes.html"><i class="material-icons">home</i>Acceuil</a></li>
+                <li><a href="php/updateNotes.php?page=options"><i class="material-icons">update</i>Actualiser les notes</a>
+                </li>
+                <li class="divider"></li>
+                <li class="active"><a href="options.html"><i class="material-icons">more_vert</i>Options</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<!-- Se déconnecter container -->
+<div class="container center-align">
+    <p class="z-depth-1" style="padding: 1% 1% 1% 1%;">
+        <a class="waves-effect waves-light btn red" href="php/logout.php"><i class="material-icons right">power_settings_new</i>Se
+            déconnecter</a>
+    </p>
+    <div class="z-depth-1" style="padding: 0.5% 1% 1% 1%;">
+        <h4>Crédits</h4>
+        <div class="center-align">
+            <div class="row">
+                <div class="col s12 m7">
+                    <div class="row">
+                        <div class="card">
+                            <div class="card-image">
+                                <img src="images/INFO.jpg">
+                                <span class="card-title">DUT INFORMATIQUE de LAVAL</span>
+                            </div>
+                            <div class="card-content">
+                                <p>Ce projet à été réalisé dans le cadre du projet tuteuré du Semestre 4 (2017-2019) de
+                                    l'IUT de Laval</p>
+                            </div>
+                            <div class="card-action">
+                                <a href="http://www.iut-laval.univ-lemans.fr"><i class="material-icons right">send</i>Site
+                                    web de l'IUT</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col s12 m7">
+                    <div class="row">
+                        <div class="card">
+                            <div class="card-image">
+                                <img src="images/github_back.jpg">
+                                <span class="card-title">API de récupération des Notes</span>
+                            </div>
+                            <div class="card-content">
+                                <p>Pour la réalisation de ce site, nous avons crée une API de récupération de notes à partir de l'ENT du Mans.
+                                <br>Le code est open-source, toutes les instructions pour l'utiliser sont sur le GitHub</p>
+                            </div>
+                            <div class="card-action">
+                                <a href="https://github.com/codevirtuel/API_ENT_Notes"><span class="mdi mdi-github-circle"></span> Repository GitHub</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+        <h5>Groupe de projet</h5>
+        <div class="col s12">
+            <div class="row">
+                <!-- Alexis -->
+                <div class="col s6">
+                    <div class="card-panel grey lighten-5 z-depth-1">
+                        <div class="card-content">
+                            <div class="row valign-wrapper">
+                                <div class="col s4">
+                                    <img src="images/Alexis.png" alt="" class="circle responsive-img">
+                                </div>
+                                <div class="col s8">
+                                  <span class="black-text">
+                                      <span class="flow-text" style="font-weight: bold">Alexis POUPELIN</span><br>
+                                      <span>Développeur</span>
+                                  </span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-action">
+                            <a href="https://github.com/codevirtuel"><span class="mdi mdi-github-circle"></span> GitHub</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col s6">
+                    <div class="card-panel grey lighten-5 z-depth-1">
+                        <div class="card-content">
+                            <div class="row valign-wrapper">
+                                <div class="col s4">
+                                    <img src="images/Alexis.png" alt="" class="circle responsive-img">
+                                </div>
+                                <div class="col s8">
+                                  <span class="black-text">
+                                      <span class="flow-text" style="font-weight: bold">Alexis POUPELIN</span>
+                                  </span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-action">
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+
+</div>
+
+<script type="text/javascript" src="js/materialize.min.js"></script>
+<script src="lib/jquery-3.3.1.min.js"></script>
+<script type="text/javascript" src="js/updateSlider.js"></script>
+<script src="js/errors.js"></script>
+<script>
+    //Navbar
+    var elem = document.querySelector('.sidenav');
+    var instance = new M.Sidenav(elem);
+
+    $(function () {
+        $('.sidenav').sidenav();
+    });
+</script>
+</body>
+</html>

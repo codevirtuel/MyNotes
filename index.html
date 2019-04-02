@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8"/>
+    <!--Import Google Icon Font-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!--Import materialize.css-->
+    <link type="text/css" rel="stylesheet" href="css/materialize.min.css" media="screen,projection"/>
+    <link type="text/css" rel="stylesheet" href="css/login.css" media="screen,projection"/>
+    <link rel="icon" type="image/png" href="images/icon.png" />
+    <title>MyNotes - Gestionnaire de notes de l'IUT de Laval</title>
+    <!--Let browser know website is optimized for mobile-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <!-- preload -->
+    <link rel="preload" href="./images/INFO.jpg" as="image">
+    <link rel="preload" href="./images/MMI.jpg" as="image">
+    <link rel="preload" href="./images/GB.jpg" as="image">
+    <link rel="preload" href="./images/blank.png" as="image">
+</head>
+
+<body onload="updateBackground(); showError(); checkCookie()">
+<!-- App logo -->
+<div class="bg-image"></div>
+<div class="page-bg">
+    <img class="bottom" src="./images/MMI.jpg"/>
+    <img class="top" src="./images/INFO.jpg"/>
+</div>
+
+<!-- Login form -->
+<form class="col container z-depth-2 login_block element" action="php/login_form.php" method="post">
+    <div class="center">
+        <img class="responsive-img" style='width:30%;' src="images/logo.png"/>
+    </div>
+    <h3 class="flow-text center-align">Connectez-vous pour visionner vos notes</h3>
+    <div class="input-field col">
+        <i class="material-icons prefix">account_circle</i>
+        <input id="icon_prefix" type="text" class="validate" name="id" required>
+        <label for="icon_prefix">Identifiant</label>
+    </div>
+    <div class="input-field col">
+        <i class="material-icons prefix">vpn_key</i>
+        <input id="icon_telephone" type="password" class="validate" name="pass" required>
+        <label for="icon_telephone">Mot de passe</label>
+    </div>
+    <div class="input-field col s12">
+        <i class="material-icons prefix">home</i>
+        <select id="dep_select" name="dep" onchange="updateBackground()" required>
+            <option value="IUT" disabled selected>Département</option>
+            <option value="INFO">Informatique</option>
+            <option value="MMI">Métiers du Multimédia et du Numérique</option>
+            <option value="GB">Génie Biologique</option>
+            <option value="TC">Techniques de Communication</option>
+        </select>
+    </div>
+
+    <label>
+        <input type="checkbox" class="filled-in" name="remember"/>
+        <span>Se souvenir de moi</span>
+    </label>
+    <br><br>
+    <button class="btn waves-effect waves-light" type="submit" name="action">Se connecter
+        <i class="material-icons right">send</i>
+    </button>
+
+</form>
+
+
+<!--JavaScript at end of body for optimized loading-->
+<script src="lib/jquery-3.3.1.min.js"></script>
+<script src="lib/js.cookie.js"></script>
+<script type="text/javascript" src="js/materialize.min.js"></script>
+<script type="text/javascript" src="js/login_submit.js"></script>
+<script src="js/errors.js"></script>
+<script>
+    var elems = document.querySelectorAll('select');
+    var instances = M.FormSelect.init(elems);
+
+    $(function () {
+        $('select').formSelect();
+    });
+</script>
+</body>
+
+</html>
